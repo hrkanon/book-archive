@@ -14,15 +14,16 @@
     />
   </head>
   <body>
-    <h2 class="text-center text-primary my-4">Search Your Book</h2>
+    <h2 class="text-center bg-success p-2 text-white bg-opacity-75 w-75 text-primary mx-auto my-4">Welcome to Our Book Store</h2>
+    </header>
     <!-- Search Area -->
-    <section class="container">
-      <div class="input-group mb-3">
+    <section class="container w-75">
+      <div class="input-group mb-3 mx-auto">
         <input
           type="text"
           id="search-field"
           class="form-control"
-          placeholder="Enter Book Name"
+          placeholder="Search Your Book Here"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
         />
@@ -43,11 +44,13 @@
     </section>
     <!-- Search Results -->
     <section id="result-container" class="container">
+      <!-- result quantity -->
       <h3 id="result-quantity" class="text-center text-success"></h3>
+      <!-- error message -->
       <h3 id="error-message" class="text-center text-danger">
-        Please Enter a valid book
+        Search Field can not be emply
       </h3>
-     <div id="searched-display" class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+     <div id="searched-display" class="row row-cols-1 row-cols-md-4 g-4 my-5 w-75 mx-auto">
     
   
     </section>
