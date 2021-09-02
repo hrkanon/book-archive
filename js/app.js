@@ -13,6 +13,7 @@ const searchItem = () => {
   searchField.value = "";
   resultQuantity.textContent = "";
   searchedDisplay.textContent = "";
+  errorMessage.style.display = "none";
   // Display Spineer
   spinner.style.display = "block";
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
