@@ -16,14 +16,12 @@ const searchItem = () => {
   // Display Spineer
   spinner.style.display = "block";
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
-  console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayBooks(data));
 };
 
 const displayBooks = (books) => {
-  // console.log(books);
   spinner.style.display = "none";
   searchedDisplay.textContent = "";
   // Handle empty search request
@@ -44,16 +42,15 @@ const displayBooks = (books) => {
     // getting 24 items of total quantity
     const sortedBooks = books.docs.slice(0, 24);
     sortedBooks.forEach((book) => {
-      // console.log(book.publisher[0]);
       const div = document.createElement("div");
       div.classList.add("col");
       div.innerHTML = `
          <div class="card h-100">
-               <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt=>
+               <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" height="450px" class="card-img-top" alt=>
             <div class="card-body">
                <h5 class="card-title">Book Name: ${book.title}</h5>
-               <p class="card-text">Author: ${book.author_name}</p>
-              <p class="card-text fw-bold">Published by - ${book.publisher}</p>
+               <p class="card-text">Author: ${book.author_name?.[0]}</p>
+              <p class="card-text fw-bold">Published by - ${book.publisher?.[0]}</p>
               <p class="card-text fw-bold">First Published Year: ${book.first_publish_year}</p>
             </div>
           </div>
